@@ -8,6 +8,9 @@ const findResource = () => {
 
 const createResource = (newResource) => {
     return db('resources').insert(newResource)
+    .then(([resource_id]) => {
+        return db("resources").where('resource_id', resource_id)
+    })
 }
 
 module.exports = {

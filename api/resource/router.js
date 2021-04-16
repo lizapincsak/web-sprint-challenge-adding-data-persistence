@@ -13,7 +13,7 @@ router.get('/', (req, res, next) => {
 router.post('/', (req, res, next) => {
     Resource.createResource(req.body)
         .then((newResource) => {
-            res.status(201).json(newResource)
+            res.json(newResource)
         })
         .catch(next)
 })
